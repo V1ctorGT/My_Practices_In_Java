@@ -1,27 +1,27 @@
-import model.Book;
-import service.BookInterface;
+import model.PhysicalBook;
+import service.Book;
 
-import static service.BookInterface.getBookVersion;
+import static service.Book.getBookVersion;
 
 public class Application {
 
 	public static void main(String[] args) {
 
-		final BookInterface reactBook = new BookInterface() {
+		final Book reactBook = new Book() {
 			@Override
 			public String getTitle() {
 				return "The Road to React " + getBookVersion() + " version";
 			}
 		};
 
-		final Book javaBook = new Book("Java Design Patterns") {
+		final PhysicalBook javaPhysicalBook = new PhysicalBook("Java Design Patterns") {
 			@Override
 			public String getDescription() {
 				return "Third Edition";
 			}
 		};
 
-		final String jsBookEdition = new Book("Eloquent JavaScript") {
+		final String jsBookEdition = new PhysicalBook("Eloquent JavaScript") {
 			public String getEdition() {
 				return "Fourth Edition";
 			}
@@ -30,7 +30,7 @@ public class Application {
 		// Prints
 		System.out.printf("Title: %s, book cover: %s", reactBook.getTitle(), reactBook.getBookCover());
 		System.out.println();
-		System.out.printf("Title: %s, description: %s", javaBook.getTitle(), javaBook.getDescription());
+		System.out.printf("Title: %s, description: %s", javaPhysicalBook.getTitle(), javaPhysicalBook.getDescription());
 		System.out.println();
 		System.out.printf("Description: %s", jsBookEdition);
 	}

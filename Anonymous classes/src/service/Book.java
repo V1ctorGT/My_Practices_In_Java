@@ -1,6 +1,6 @@
 package service;
 
-public interface BookInterface {
+public interface Book {
 
 	static String getBookVersion() {
 		return "English";

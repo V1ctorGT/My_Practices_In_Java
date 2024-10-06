@@ -1,13 +1,16 @@
 package model;
 
-public class Book {
+import service.Book;
+
+public class PhysicalBook implements Book {
 
 	private final String title;
 
-	public Book(final String title) {
+	public PhysicalBook(final String title) {
 		this.title = title;
 	}
 
+	@Override
 	public String getTitle() {
 		return title;
 	}
